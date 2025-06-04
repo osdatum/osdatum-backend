@@ -1,5 +1,3 @@
-#Sample Dockerfile for NodeJS Apps
-
 FROM node:22
 
 ENV NODE_ENV=production

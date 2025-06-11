@@ -32,6 +32,12 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors({
+  origin: 'https://osdatum.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 // CORS configuration
 const whitelist = [
   'http://localhost:5173',
@@ -78,6 +84,7 @@ app.use((err, req, res, next) => {
   const origin = req.headers.origin;
   const whitelist = [
     'http://localhost:5173',
+    'hattps://osdatum.vercel.app',
     'https://osdatum-app.vercel.app',
     'https://osdatum-app.onrender.com',
     'https://*.vercel.app'  // Allow all Vercel preview deployments
